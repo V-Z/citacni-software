@@ -1,0 +1,269 @@
+\documentclass[compress, ucs, xelatex, xcolor=dvipsnames, print,
+	hyperref={
+		bookmarks=true,
+		unicode=true,
+		colorlinks=true,
+		pdftitle={Citacni software},
+		plainpages=false,
+		pdfauthor={Vojtech Zeisek},
+		pdfsubject={Kratky uvod do citacniho software},
+		pdfcreator={XeLaTeX},
+		pdfkeywords={citace, reference, software, literatura},
+		linkcolor=Red,
+		anchorcolor=Red,
+		citecolor=Green,
+		filecolor=Magenta,
+		menucolor=Green,
+		urlcolor=Cyan,
+		pdftex},
+	url={hyphens, lowtilde} % Řádkové zlomy v dlouhých URL
+	]{beamer}
+
+\usepackage{xltxtra}
+\usepackage{xunicode}
+% \usepackage{fontspec}
+\usepackage{dtk-logos}
+% \usepackage{multicol}
+
+% Nastavení vzhledu
+\usecolortheme{spruce}
+\useinnertheme[shadow]{rounded}
+\useoutertheme{shadow}
+
+\setbeamertemplate{headline} {
+	\hbox{%
+		\begin{beamercolorbox}[wd=\paperwidth, ht=2.65ex, dp=1.5ex, right]{section in head/foot}
+			\insertsectionnavigationhorizontal{\paperwidth}{\hskip0pt plus1fill}{\hskip0pt plus1fill}
+			\end{beamercolorbox}%
+		}
+	\vskip 0pt
+	}
+
+\setbeamertemplate{footline} {
+	\hbox{%
+		\begin{beamercolorbox}[wd=0.333333\paperwidth, ht=2.25ex, dp=1ex, center]{author in head/foot}
+			\usebeamerfont{author in head/foot}\insertshortauthor~(\insertshortinstitute)
+		\end{beamercolorbox}%
+		\begin{beamercolorbox}[wd=0.333333\paperwidth, ht=2.25ex, dp=1ex, center]{title in head/foot}
+			\usebeamerfont{title in head/foot}\insertshorttitle
+		\end{beamercolorbox}%
+		\begin{beamercolorbox}[wd=0.333333\paperwidth, ht=2.25ex, dp=1ex, right]{date in head/foot}
+			\usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+			\insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+		\end{beamercolorbox}%
+		}
+	\vskip 0pt
+	}
+
+% Jazyk
+\usepackage{polyglossia}
+\setdefaultlanguage{czech}
+
+% Titulka
+\author{Vojtěch Zeisek}
+\institute[PřF UK \& BÚ AV ČR]{Katedra botaniky PřF UK, Botanický ústav AV ČR\\ \url{https://trapa.cz/cs}, \href{mailto:zeisek@natur.cuni.cz}{zeisek@natur.cuni.cz}}
+\title{Citační software}
+\subtitle{O~software, který vám pomůže a~usnadní práci}
+\date{1. a~8. 11. 2019}
+\titlegraphic{\includegraphics[height=2cm]{logo.jpg}}
+
+\begin{document}
+
+\begin{frame}
+	\titlepage
+\end{frame}
+
+\begin{frame}{Obsah}
+	\tableofcontents
+\end{frame}
+
+\section{Obecně}
+
+\begin{frame}{K čemu to je I}{Usnadnění jinak pracnéo udržování citací}
+	\begin{itemize}
+		\item V~každém odborném textu, včetně BP, musí být veškerá tvrzení vždy doložena citacemi (Usus, 1800).
+		\item Jinak text neprojde (Obhajoba \& Komise, 2013).
+	\end{itemize}
+	\textbf{Literatura:}
+	\begin{itemize}
+		\item Usus, Obecný Odborný 1800. Psaní odborného textu. Journal of Understanding\textbf{, 1,} 209--216.
+		\item Obhajoba, Veřejná \& Komise Zkušební 2013. Hodnocení kvality. Journal of Acceptance \textbf{(2013)} 8--15.
+	\end{itemize}
+	\vfil
+	\hrulefill
+	\vfill
+	Ručně to lze dělat dokud máte pár stránek textu, jednotky citací a~nebudete měnit citace a~nebudete měnit styl jejich zobrazení\ldots
+\end{frame}
+
+\begin{frame}{K čemu to je II}{Tvrzení musí být doložená\ldots}
+	\includegraphics[width=\textwidth]{xkcd.png}
+	\begin{flushright}
+		\url{https://xkcd.com/285/} a~\url{https://xkcd.com/978/}
+	\end{flushright}
+\end{frame}
+
+\begin{frame}{K čemu to je III}
+	\begin{itemize}
+		\item V~každém odborném textu, včetně BP, musí být veškerá tvrzení vždy doložena citacemi$^{1}$.
+		\item Jinak text neprojde$^{2}$.
+	\end{itemize}
+	\textbf{Literatura:}
+	\begin{enumerate}
+		\item Usus, O. O. Psaní odborného textu. J. Understand. 1, 209–216 (1800).
+		\item Obhajoba, V. \& Komise Z.. Hodnocení kvality. J. Accept. 213, 8–15 (2013).
+	\end{enumerate}
+	\hrulefill\\
+	\textbf{Chcete to dělat ručně? Vážně?}
+	\begin{itemize}
+		\item Vše citované v~textu bude v~literatuře a~naopak\ldots?
+		\item Budete mít stovky článků a~desítky stran textu\ldots?
+		\item Vše bude mít jednotný styl\ldots?
+		\item Udržíte pořádek když to začnete měnit\ldots?
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Jaký citační software existuje --- výběr}
+	\begin{itemize}
+		\item \textbf{EndNote} --- placený software, zkušební 30 denní verze je dostupná na \url{https://endnote.com/}
+		\item \textbf{EndNote Web} --- kompatibilní k~EndNote, pro uživatele z~PřF UK zdarma v~rámci přístupu k~\href{https://apps.webofknowledge.com/}{Web of Science}, viz \url{https://www.myendnoteweb.com/}
+		\item \textbf{Zotero} --- multiplatformní, freeware, open-source, dostupný na \url{https://www.zotero.org/}
+		\item \textbf{Mendeley} --- multiplatformní, freeware, dostupný na \url{https://www.mendeley.com/}, spojený s~\href{https://www.elsevier.com/}{Elsevirem}  a~\href{https://www.scopus.com/}{Scopusem}
+		\item \textbf{RefWorks} --- on-line služba, viz \url{https://www.refworks.com/}, spojeno s~\href{https://www.proquest.com/}{ProQuestem}
+		\item \textbf{JabRef} --- multiplatformní, open-source, freeware, dostupný na \url{https://www.jabref.org/}, pracuje s~\BibTeX em
+		\item \textbf{\BibTeX} --- multiplatformní, open-source, freeware, doplněk pro uživatele \TeX u a~\LaTeX u, viz \url{http://www.bibtex.org/}
+		\item Základní nástroje pro správu citací jsou i~v~\href{https://www.openoffice.cz/navody/jak-vytvorit-a-upravovat-seznam-pouzite-literatury}{LibreOffice}, v~MS~Office lze např. vytvořit a~využít databázi v~MS~Access a~propojit jí s~MS~Word
+		\begin{itemize}
+			\item Funkčně to za specializovanými nástroji dosti zaostává\ldots
+		\end{itemize}
+		\item A~mnoho dalších\ldots
+		\item Všechny nástroje se poměrně rychle rozvíjí\ldots
+		\item Zvláště pro \BibTeX existuje velké množství různých nástrojů (\href{https://www.linuxexpres.cz/software/kile-a-kbibtex}{Kile a~KBibTeX},~\ldots)
+		\item Je jedno, jaký nástroj si vyberete, s~jedním se naučte pořádně pracovat a~systematicky jej používejte\ldots
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Co to umí}
+	\begin{itemize}
+		\item Stáhnout citaci do databáze/knihovny (z~WoS, Scopus,~\ldots)
+		\item Propojit citaci v~dokumentu (v~databázi, textu) s~PDF fulltextu, webem časopisu,~\ldots
+		\item Vytáhnout informace (autor, titul, časopis,~\ldots) z~PDF (většinou), webové stránky článku,~\ldots
+		\item Pracovat s~různými on-line zdroji
+		\item Organizovat a~prohledávat citace (klíčová slova,~\ldots)
+		\item Pracovat s~textovým editorem/procesorem (\href{https://www.natur.cuni.cz/fakulta/cit/podpora-uzivatelu/softwarove-licence}{Word}, \href{https://www.openoffice.cz/}{Libre/OpenOffice}, \TeX,~\ldots), vkládání citací do textu
+		\item Upravovat citace v~textu během psaní, upravovat aktuální bibliografii,~\ldots
+		\item Měnit citační styly v~průběhu tvorby dokumentu
+		\item Sdílet svojí knihovnu s~kolegy (většinou)
+		\item A~mnoho dalšího\ldots
+	\end{itemize}
+\end{frame}
+
+\section{EndNote}
+
+\begin{frame}{Mapa funkcí na příkladu EndNote}{U ostatních je to podobné\ldots}
+	\includegraphics[width=\textwidth]{mapa_funkci.png}
+\end{frame}
+
+\begin{frame}{Stáhnutí citace}
+	\begin{itemize}
+		\item Většina on-line databází nabízí možnost exportu záznamu v~různých formátech --- většina programů umí importovat víc formátů~\ldots
+	\end{itemize}
+	\begin{center}
+		\includegraphics[height=5.5cm]{export_z_wos.png}
+	\end{center}
+\end{frame}
+
+\section{Zotero}
+
+\begin{frame}{Knihovna v~Zoteru}
+	\begin{itemize}
+		\item Zotero (\url{https://www.zotero.org/}) má doplněk pro prohlížeč (Mozilla Firefox, Google Chrome, Apple Safari) a~samostatnou aplikaci pro MS~Windows, macOS i~Linux
+	\end{itemize}
+	\includegraphics[width=\textwidth]{zotero.png}
+\end{frame}
+
+\begin{frame}{Vkládání do Wordu nebo podobného programu}
+	\begin{itemize}
+		\item Zotero a~Mendeley spolupracují s~MS Office in Open/\href{https://cs.libreoffice.org/}{Libre Office} na Windows, macOS i~Linuxu, komerční programy obvykle jen s~MS Word na MS Windows nebo macOS
+	\end{itemize}
+	\includegraphics[width=\textwidth]{zotero_lista.png}
+\end{frame}
+
+\section{Mendeley}
+
+\begin{frame}{Praktická ukázka\ldots}
+	Mendeley --- zdarma dostupný, multiplatformní, s~možností on-line synchronizace (zdarma 2~GB prostoru, víc lze dokoupit), aplikace pro mobily a~tablety,~\ldots\\
+	\includegraphics[width=\textwidth]{mendeley.png}
+	\flushright\url{https://www.mendeley.com/}
+\end{frame}
+
+\begin{frame}{Mendeley web}{Knihovna je dostupná on-line, ``sociální'' funkce, sdílení, databáze literatury,~\ldots}
+	\includegraphics[width=\textwidth]{mendeley_web.png}
+\end{frame}
+
+\begin{frame}{Import ze stránky časopisu do Mendeley}{Článek se naimportuje do on-line knihovny a~z~ní se synchronizuje do aplikace v~počítači}
+	\begin{itemize}
+		\item Lze importovat z~webových článek časopisů, z~on-line databází, z~PDF článků, z~jiných citačních nástrojů,~\ldots
+	\end{itemize}
+	\includegraphics[width=\textwidth]{mendeley_web_import.png}
+\end{frame}
+
+\section{Závěr}
+
+\begin{frame}[allowframebreaks]{Špetka typografie a~usnadnění práce}
+	\begin{itemize}
+		\item \textbf{Používejte styly!}
+			\begin{itemize}
+				\item Můžete formát nadpisů, odstavců apod. měnit centrálně -- změny se ihned projeví všude
+				\item Text bude mít jednotný vzhled, logicky povede čtenáře
+				\item Ze stylů nadpisů lze na pár kliknutí vygenerovat hierarchický obsah (samozřejmě nastylovatelný)
+			\end{itemize}
+		\item \textbf{Používejte křížové odkazy a~pole!}
+			\begin{itemize}
+				\item Číslování obrázků, tabulek, apod. se automaticky aktualizuje při přidání/odebrání/přesunutí, stejně tak odkazy na daný obrázek/\ldots
+			\end{itemize}
+		\item Často ukládejte, včetně \href{https://www.natur.cuni.cz/biologie/botanika/provozni-informace/servery-weby-a-pocitace/moznosti-zalohovani-dat}{záloh}, ukládejte různé verze -- můžete se k~něčemu vrátit
+		\item Čtěte nápovědy svých programů
+			\begin{itemize}
+				\item Vaše programy možná umí víc, než si myslíte\ldots
+				\item Děláte-li ručně nějakou nudnou opakující se práci, určitě na to existuje jednoduchá automatická funkce\ldots
+			\end{itemize}
+		\item Odkazy na návody
+			\begin{itemize}
+				\item \href{https://www.linuxexpres.cz/kancelar/jak-vytvorit-zaverecnou-pisemnou-praci}{Jak vytvořit závěrečnou písemnou práci} -- návod původně pro OpenOffice, ale logika je platná pro všechny podobné programy
+				\item \href{https://www.root.cz/knihy/libreoffice-writer-prakticky-pruvodce/}{Kniha LibreOffice Writer: Praktický průvodce} -- vše, co jste potřebovali vědět, viz i~\url{https://www.knihaoffice.cz/}
+				\item \href{https://formatovani-dokumentu.cz/navody}{Návody, formátování,~\ldots}
+			\end{itemize}
+		\item Aby text vypadal dobře, je lepší se vyhnout kancelářským sadám (MS~Office, LibreOffice,~apod.) a~použít raději nástroj specializovaný na sazbu
+			\begin{itemize}
+				\item Nejjednodušší je text za použití stylů napsat v~nějaké Office sadě a~vysázet ve \textbf{Scribu} (\url{https://www.scribus.net/} a~\url{https://scribus.cz/}, program specializovaný na sazbu, podobně jako \href{https://www.natur.cuni.cz/fakulta/cit/podpora-uzivatelu/softwarove-licence/adobe}{Adobe} InDesign) nebo něčem podobném
+			\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Užitečné odkazy}
+	\begin{itemize}
+		\item EndNote: \url{https://www.endnote.com/}
+		\item Zotero: \url{https://www.zotero.org/}
+		\item Mendeley: \url{https://www.mendeley.com/}
+		\item Tutoriál k~EndNote: \url{http://ich.vscht.cz/pres/endnote/}
+		\item Návod na Mendeley: \url{https://www.linuxexpres.cz/software/mendeley-a-mate-poradek-v-publikacich}
+		\item Návod na Zotero: \url{https://web.natur.cuni.cz/student/zotero-dalsi-nastroj-pro-spravu-citaci}
+		\item \BibTeX~a~\XeLaTeX~(v~Linuxu): \url{https://www.linuxexpres.cz/software/kile-a-kbibtex}
+		\item Vizuální editor pro \XeLaTeX (pro všechny systémy): \href{https://www.linuxexpres.cz/software/textovy-editor-lyx-latex-pro-line}{úvod} a~\href{https://www.linuxexpres.cz/praxe/diplomka-lyx}{podrobnější návod}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Děkuji za pozornost\ldots}
+	\includegraphics[width=\textwidth]{phdcomics_writing.png}
+	\begin{scriptsize}
+		\url{http://phdcomics.com/comics/archive.php?comicid=1732}
+	\end{scriptsize}
+	\begin{flushright}
+		\ldots otázky?
+	\end{flushright}
+	\begin{tiny}
+		Vysázeno v~\XeLaTeX u~na \href{https://www.opensuse.org/}{openSUSE GNU/Linuxu} \today.
+	\end{tiny}
+\end{frame}
+
+\end{document}
