@@ -1,33 +1,33 @@
 ## XeLaTeX
-*.aux
-*.lof
-*.log
-*.lot
-*.fls
-*.out
-*.toc
-*~
-*.bak
-*.backup
-*.kilepr
-*.pdf
+**.aux
+**.lof
+**.log
+**.lot
+**.fls
+**.out
+**.toc
+**~
+**.bak
+**.backup
+**.kilepr
+**.pdf
 # beamer
-*.nav
-*.snm
-*.vrb
+**.nav
+**.snm
+**.vrb
 # hyperref
-*.brf
+**.brf
 # listings
-*.lol
+**.lol
 # makeidx
-*.idx
-*.ilg
-*.ind
-*.ist
+**.idx
+**.ilg
+**.ind
+**.ist
 # minitoc
-*.maf
-*.mtc
-*.mtc0
+**.maf
+**.mtc
+**.mtc0
 # nomencl
-*.nlo
+**.nlo
 
