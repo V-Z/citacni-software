@@ -1,4 +1,4 @@
-\documentclass[compress, ucs, xelatex, 11pt, xcolor=svgnames, aspectratio=169,
+\documentclass[compress, xelatex, 11pt, xcolor=svgnames, aspectratio=169,
 	hyperref={
 		bookmarks=true,
 		unicode=true,
@@ -15,7 +15,7 @@
 		filecolor=Magenta, % Nepoužívá se?
 		menucolor=Magenta, % Nepoužívá se?
 		urlcolor=DarkTurquoise, % Odkazy s \href a \url
-		pdftex},
+		},
 	url={hyphens, lowtilde} % Řádkové zlomy v dlouhých URL
 	]{beamer}
 
@@ -56,22 +56,21 @@
 	}
 
 % Jazyk
-\usepackage[main=czech]{babel}
+\usepackage{polyglossia}
+\setmainlanguage{czech}
 
 % Quotes
 \usepackage[autostyle=true]{csquotes}
 
 % Titulka
 \author{Vojtěch Zeisek}
-\institute[PřF UK \& BÚ AV ČR]{Katedra botaniky PřF UK, Botanický ústav AV ČR\\ \url{https://trapa.cz/cs}, \href{mailto:zeisek@natur.cuni.cz}{zeisek@natur.cuni.cz}}
+\institute[PřF UK \& BÚ AV ČR]{Katedra botaniky PřF UK \& Botanický ústav AV ČR\\ \url{https://trapa.cz/cs}, \href{mailto:zeisek@natur.cuni.cz}{zeisek@natur.cuni.cz}}
 \title{Citační software}
 \subtitle{O~software, který vám pomůže a~usnadní práci}
-\date{4. a 18. 11. 2022}
+\date{10. 11. 2023}
 \titlegraphic{\includegraphics[height=2cm]{logo.jpg}}
 
 \begin{document}
-
-\shorthandoff{-} % https://tex.stackexchange.com/questions/583266/the-problem-is-that-czech-babel-makes-an-active-character-whatever-that-mea
 
 \begin{frame}
 	\titlepage
@@ -96,12 +95,12 @@
 	\vfil
 	\hrulefill
 	\vfill
-	Ručně to lze dělat dokud máte pár stránek textu, jednotky citací a~nebudete měnit citace a~nebudete měnit styl jejich zobrazení\ldots
+	Ručně to lze dělat dokud máte pár stránek textu, jednotky citací a~nebudete citace měnit a~nebudete měnit styl jejich zobrazení\ldots
 \end{frame}
 
 \begin{frame}{K~čemu to je~II}{Tvrzení musí být doložená\ldots}
 	\begin{center}
-		\includegraphics[height=5.5cm]{xkcd.png}
+		\includegraphics[height=6cm]{xkcd.png}
 	\end{center}
 	\begin{flushright}
 		\url{https://xkcd.com/285/} a~\url{https://xkcd.com/978/}
@@ -118,7 +117,9 @@
 		\item Usus, OO. Psaní odborného textu. J. Understand. 1, 209--216 (1800).
 		\item Obhajoba, V \& Komise Z. Hodnocení kvality. J. Accept. 213, 8--15 (2013).
 	\end{enumerate}
-	\hrulefill\\
+	\vfill
+	\hrulefill
+	\vfill
 	\textbf{Chcete to dělat ručně? Vážně?}
 	\begin{itemize}
 		\item Vše citované v~textu bude v~literatuře a~naopak\ldots?
@@ -135,15 +136,15 @@
 		\item \textbf{Zotero} --- multiplatformní, freeware, open-source, dostupný na~\url{https://www.zotero.org/}
 		\item \textbf{Mendeley} --- multiplatformní, freeware, dostupný na~\url{https://www.mendeley.com/}, spojený s~\href{https://www.elsevier.com/}{Elsevirem}  a~\href{https://www.scopus.com/}{Scopusem}
 		\item \textbf{RefWorks} --- on-line služba, viz \url{https://www.refworks.com/}, spojeno s~\href{https://www.proquest.com/}{ProQuestem}
-		\item \textbf{JabRef} --- multiplatformní, open-source, freeware, dostupný na~\url{https://www.jabref.org/}, pracuje s~\BibTeX em
-		\item \textbf{\BibTeX} --- multiplatformní, open-source, freeware, doplněk pro~uživatele \TeX u, \LaTeX u a~\XeLaTeX u a~jejich variant, viz \url{http://www.bibtex.org/}
+		\item \textbf{JabRef} --- multiplatformní, open-source, freeware, dostupný na~\url{https://www.jabref.org/}, pracuje s~\BibTeX em, LibreOffice Writerem i~MS~Wordem
+		\item \textbf{\BibTeX} --- multiplatformní, open-source, freeware, doplněk pro~uživatele \TeX u, \LaTeX u a~\XeLaTeX u a~jejich variant, viz \url{https://www.bibtex.org/}
 		\item Základní nástroje pro~správu citací jsou i~v~\href{https://www.openoffice.cz/navody/jak-vytvorit-a-upravovat-seznam-pouzite-literatury}{LibreOffice}, v~MS~Office lze např. vytvořit a~využít databázi v~MS~Access a~propojit jí s~MS~Word
 		\begin{itemize}
 			\item Funkčně to~za~specializovanými nástroji dosti zaostává\ldots
 		\end{itemize}
 		\item A~mnoho dalších\ldots
 		\item Všechny nástroje se~rozvíjí\ldots
-		\item Zvláště pro \BibTeX existuje velké množství různých nástrojů (\href{https://www.linuxexpres.cz/software/kile-a-kbibtex}{Kile a~KBibTeX},~\ldots)
+		\item Zvláště pro \BibTeX{ }existuje velké množství různých nástrojů (\href{https://www.linuxexpres.cz/software/kile-a-kbibtex}{Kile a~KBibTeX},~\ldots)
 		\item Je jedno, jaký nástroj si~vyberete, s~jedním se naučte pořádně pracovat a~systematicky jej používejte\ldots
 	\end{itemize}
 \end{frame}
@@ -154,8 +155,8 @@
 		\item Propojit citaci v~dokumentu (v~databázi, textu) s~PDF fulltextu, webem časopisu,~\ldots
 		\item Vytáhnout informace (autor, titul, časopis,~\ldots) z~PDF (většinou), webové stránky článku,~\ldots
 		\item Pracovat s~různými on-line zdroji
-		\item Organizovat a~prohledávat citace (klíčová slova,~\ldots)
-		\item Pracovat s~textovým editorem/procesorem (\href{https://www.natur.cuni.cz/fakulta/cit/podpora-uzivatelu/softwarove-licence}{Word}, \href{https://www.openoffice.cz/}{LibreOffice}, \TeX,~\ldots), vkládání citací do~textu
+		\item Organizovat a~prohledávat citace (klíčová slova, kategorie,~\ldots)
+		\item Pracovat s~textovým editorem/procesorem (\href{https://www.natur.cuni.cz/fakulta/cit/podpora-uzivatelu/softwarove-licence}{Word}, \href{https://cs.libreoffice.org/}{LibreOffice}, \TeX,~\ldots), vkládání citací do~textu
 		\item Upravovat citace v~textu během psaní, upravovat aktuální bibliografii,~\ldots
 		\item Měnit citační styly v~průběhu tvorby dokumentu
 		\item Sdílet svojí knihovnu s~kolegy (většinou)
@@ -173,10 +174,11 @@
 
 \begin{frame}{Stáhnutí citace}
 	\begin{itemize}
-		\item Většina on-line databází nabízí možnost exportu záznamu v~různých formátech --- většina programů umí importovat víc formátů~\ldots
+		\item Většina on-line databází nabízí možnost exportu záznamu v~různých formátech\ldots
+		\item Většina programů umí importovat víc formátů\ldots
 	\end{itemize}
 	\begin{center}
-		\includegraphics[height=5.5cm]{export_z_wos.png}
+		\includegraphics[height=6cm]{export_z_wos.png}
 	\end{center}
 \end{frame}
 
@@ -221,7 +223,7 @@
 		\item Zotero a~Mendeley spolupracují s~MS Office i~\href{https://cs.libreoffice.org/}{Libre Office} na~Windows, macOS i~Linuxu, komerční programy obvykle jen s~MS Word na~MS Windows nebo macOS
 	\end{itemize}
 	\begin{center}
-		\includegraphics[height=5.5cm]{zotero_lista.png}
+		\includegraphics[height=6cm]{zotero_lista.png}
 	\end{center}
 \end{frame}
 
@@ -241,7 +243,7 @@
 				\item Text bude mít jednotný vzhled, styly logicky povedou čtenáře
 				\item Ze~stylů nadpisů lze na~pár kliknutí vygenerovat hierarchický obsah (samozřejmě nastylovatelný)
 				\item \textbf{Needitujte ručně} vzhledy odstavců, speciálních formátů (pro~zdrojový kód,~\ldots) --- vše řešte přes předdefinované styly
-				\item Na~začátku je s~tím víc práce, ale celkově se~velmi vyplatí
+				\item Na~začátku je s~tím víc práce, ale celkově se~to~velmi vyplatí
 			\end{itemize}
 		\item \textbf{Používejte křížové odkazy a~pole!}
 			\begin{itemize}
@@ -268,8 +270,10 @@
 		\item Odkazy na návody
 			\begin{itemize}
 				\item \href{https://www.linuxexpres.cz/kancelar/jak-vytvorit-zaverecnou-pisemnou-praci}{Jak vytvořit závěrečnou písemnou práci} --- návod původně pro OpenOffice, ale logika je platná pro všechny podobné programy
-				\item \href{https://www.root.cz/knihy/libreoffice-writer-prakticky-pruvodce/}{Kniha LibreOffice Writer: Praktický průvodce} --- vše, co~jste potřebovali vědět
+				\item \href{https://www.root.cz/knihy/libreoffice-writer-prakticky-pruvodce/}{Kniha LibreOffice Writer: Praktický průvodce} --- vše, co~jste potřebovali vědět (starší, ale stále platné)
+				\item \href{https://cs.libreoffice.org/get-help/documentation/}{Uživatelská příručky LibreOffice}
 				\item \href{https://formatovani-dokumentu.cz/navody}{Návody, formátování,~\ldots}
+				\item Ptejte se~svých \href{https://www.startpage.com/}{oblíbených} \href{https://duckduckgo.com/}{vyhledávačů} a/nebo umělé inteligence (vyřeší vám spoustu technických potíží)
 			\end{itemize}
 		\item Aby text vypadal dobře, je lepší se~vyhnout kancelářským sadám (MS~Office, LibreOffice,~apod.) a~použít raději nástroj specializovaný na~sazbu
 			\begin{itemize}
@@ -292,14 +296,18 @@
 \end{frame}
 
 \begin{frame}{Děkuji za pozornost\ldots}
+	\begin{Large}
+		\begin{flushright}
+			\ldots otázky?
+		\end{flushright}
+	\end{Large}
 	\begin{center}
 		\includegraphics[height=5cm]{phdcomics_writing.png}
 	\end{center}
-	\begin{scriptsize}
-		\url{https://phdcomics.com/comics/archive.php?comicid=1732}
-	\end{scriptsize}
 	\begin{flushright}
-		\ldots otázky?
+		\begin{scriptsize}
+			\url{https://phdcomics.com/comics/archive.php?comicid=1732}
+		\end{scriptsize}
 	\end{flushright}
 	\begin{tiny}
 		Vysázeno v~\XeLaTeX u~na \href{https://www.opensuse.org/}{openSUSE GNU/Linuxu} \today.
